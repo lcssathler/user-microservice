@@ -8,5 +8,6 @@ import java.io.Serializable;
 @Entity
 @Table(name = "TB_USER")
 public class UserModel implements Serializable {
-    
+
+
 }
