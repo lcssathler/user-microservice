@@ -22,7 +22,8 @@ public class UserProducer {
         emailDTO.setUserId(userModel.getId());
         emailDTO.setEmailTo(userModel.getEmail());
         emailDTO.setSubject("Success registration");
-        emailDTO.setText(String.format("Hi, %s! \nYour registration has been successfully completed. Welcome to our team!"));
+        emailDTO.setText(String.format("Hi, %s! \nYour registration has been successfully completed. Welcome to our team!", userModel.getName()));
 
+        rabbitTemplate.convertAndSend("", routingKey, emailDTO);
     }
 }
